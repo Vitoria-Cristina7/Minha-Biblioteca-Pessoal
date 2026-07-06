@@ -106,3 +106,26 @@ def atualizar_status():
             return
 
     print("Livro não encontrado.")
+
+# RF04 - Registrar empréstimo
+def emprestar_livro():
+    titulo = input("Digite o título do livro: ")
+
+    for livro in livros:
+        if livro["titulo"] == titulo:
+
+            if livro["emprestado"] == True:
+                print("Livro já está emprestado.")
+                return
+
+            amigo = input("Nome do amigo: ")
+            data = input("Data para devolução (dd/mm/aaaa): ")
+
+            livro["emprestado"] = True
+            livro["amigo"] = amigo
+            livro["data"] = data
+
+            print("Empréstimo registrado.")
+            return
+
+    print("Livro não encontrado.")
