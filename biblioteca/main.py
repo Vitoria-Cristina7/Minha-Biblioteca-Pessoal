@@ -174,3 +174,41 @@ def remover_livro():
 
     print("Livro não encontrado.")
 
+# MENU PRINCIPAL
+while True:
+
+    print("\n===== BIBLIOTECA PESSOAL =====")
+    print("1 - Cadastrar livro")
+    print("2 - Listar livros")
+    print("3 - Atualizar status")
+    print("4 - Emprestar livro")
+    print("5 - Devolver livro")
+    print("6 - Remover livro")
+    print("0 - Sair")
+
+    opcao = input("Escolha uma opção: ")
+
+    if opcao == "1":
+        cadastrar_livro()
+
+    elif opcao == "2":
+        listar_livros()
+
+    elif opcao == "3":
+        atualizar_status()
+
+    elif opcao == "4":
+        emprestar_livro()
+
+    elif opcao == "5":
+        devolver_livro()
+
+    elif opcao == "6":
+        remover_livro()
+
+    elif opcao == "0":
+        print("Programa encerrado.")
+        break
+
+    else:
+        print("Opção inválida.")
