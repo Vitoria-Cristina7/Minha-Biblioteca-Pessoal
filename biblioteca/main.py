@@ -79,5 +79,30 @@ def listar_livros():
     else:
         print("Opção inválida.")
 
-  
+# RF03 - Atualizar status
+def atualizar_status():
+    titulo = input("Digite o título do livro: ")
 
+    for livro in livros:
+        if livro["titulo"] == titulo:
+
+            print("1 - Quero Ler")
+            print("2 - Lendo")
+            print("3 - Lido")
+
+            opcao = input("Escolha o novo status: ")
+
+            if opcao == "1":
+                livro["status"] = "Quero Ler"
+            elif opcao == "2":
+                livro["status"] = "Lendo"
+            elif opcao == "3":
+                livro["status"] = "Lido"
+            else:
+                print("Opção inválida.")
+                return
+
+            print("Status atualizado.")
+            return
+
+    print("Livro não encontrado.")
