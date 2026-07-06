@@ -129,3 +129,30 @@ def emprestar_livro():
             return
 
     print("Livro não encontrado.")
+
+# RF05 - Registrar devolução
+def devolver_livro():
+    titulo = input("Digite o título do livro: ")
+
+    for livro in livros:
+        if livro["titulo"] == titulo:
+
+            if livro["emprestado"] == False:
+                print("Esse livro não está emprestado.")
+                return
+
+            hoje = datetime.now()
+            data_devolucao = datetime.strptime(livro["data"], "%d/%m/%Y")
+
+            if hoje > data_devolucao:
+                print("Livro devolvido com atraso.")
+            else:
+                print("Livro devolvido no prazo.")
+
+            livro["emprestado"] = False
+            livro["amigo"] = ""
+            livro["data"] = ""
+
+            return
+
+    print("Livro não encontrado.")
