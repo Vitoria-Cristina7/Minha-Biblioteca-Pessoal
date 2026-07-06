@@ -156,3 +156,21 @@ def devolver_livro():
             return
 
     print("Livro não encontrado.")
+
+# RF06 - Remover livro
+def remover_livro():
+    titulo = input("Digite o título do livro: ")
+
+    for livro in livros:
+        if livro["titulo"] == titulo:
+
+            if livro["emprestado"] == True:
+                print("Não é possível remover esse livro.")
+                return
+
+            livros.remove(livro)
+            print("Livro removido.")
+            return
+
+    print("Livro não encontrado.")
+
